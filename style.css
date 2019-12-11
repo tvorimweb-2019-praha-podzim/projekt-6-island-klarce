@@ -1,5 +1,9 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-*, :after, :before { box-sizing: border-box; }
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
 
 /*
  BARVY
@@ -9,35 +13,274 @@
 
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    font-family: 'Merriweather', serif;
-    font-size: 16px;
-    line-height: 1.6;
+  margin          : 0;
+  padding         : 0;
+  background-color: #f5f5f5;
+  font-family     : 'Merriweather', serif;
+  font-size       : 16px;
+  line-height     : 1.6;
 }
 
 
 /* HLAVICKA */
 
 .titulek {
-    font-family: 'Raleway', serif;
+  font-family: 'Raleway', serif;
+  font-size  : 40px;
+  text-align : center;
 }
 
+.hlavicka {
+  background-image   : linear-gradient(rgba(0, 0, 0, 0.3)0%, rgba(0, 0, 0, 0.3)100%), url(images/island-hlavicka.jpg);
+  background-size    : cover;
+  background-repeat  : no-repeat;
+  background-position: center;
+  color              : white;
+  padding            : 10px 20px;
+}
+
+.perex {
+  text-align   : center;
+  font-size    : 13px;
+  margin-bottom: 28px;
+
+}
+
+.autor::before {
+  content         : '';
+  width           : 20%;
+  height          : 1.5px;
+  background-color: white;
+  display         : block;
+  margin          : auto;
+}
+
+.autor {
+  font-style    : italic;
+  text-align    : center;
+  font-size     : 12px;
+  line-height   : 4;
+  color         : lightgray;
+  font          : bold;
+  padding-bottom: 20px;
+}
 
 /* MENU */
 
+.menu {
+  text-align     : center;
+  list-style-type: none;
+  padding-right  : 30px;
+}
 
+.menu li a {
+  text-decoration: none;
+  text-transform : uppercase;
+  color          : rgb(151, 138, 138);
+  font-size      : 12px;
+  font-family    : raleway, serif;
+}
 
+li {
+  border-bottom: 0.5px solid rgb(206, 200, 200);
+  padding      : 5px;
+}
 
 /* OBSAH */
+.uvod {
+  margin: 40px;
+}
 
+p {
+  padding  : 0 30px;
+  font-size: 12px;
+}
+
+h2 {
+  padding-left: 30px;
+  font-family : raleway;
+  margin      : 40px 0;
+}
+
+img {
+  width: 100%;
+}
+
+.popisek {
+  text-align : center;
+  font-size  : 9px;
+  font-family: raleway;
+  color      : gray;
+  margin     : 2px 0;
+
+}
+
+.popisek a {
+  color          : gray;
+  text-decoration: underline;
+}
+
+h2::after {
+  content         : '';
+  display         : block;
+  background-color: rgb(111, 169, 216);
+  width           : 15%;
+  height          : 3px;
+  margin-top      : 20px;
+  margin-left     : -30px;
+
+}
 
 
 
 /* FOTOGALERIE */
 
+.galerie .popisek {
+  font       : 10px;
+  font-weight: bold;
+  margin     : 10px 0;
+}
 
-
+.galerie .popisek a,
+.popisek-copy {
+  font-weight: normal;
+}
 
 /* PATICKA */
+.paticka {
+  background: linear-gradient(to bottom, rgb(219, 211, 211), rgb(243, 235, 235) 20%);
+  padding   : 30px 0;
+}
+
+.paticka p,
+.paticka a {
+  color    : grey;
+  font-size: 9px;
+}
+
+
+
+/* TABLET */
+@media (min-width: 500px) {
+  .menu {
+    display        : flex;
+    justify-content: space-evenly;
+    align-items    : stretch;
+    margin         : 30px 0;
+    padding        : 5px 0;
+  }
+
+  .menu li {
+    flex       : 1;
+    border     : 1px solid rgb(206, 200, 200);
+    border-left: none;
+  }
+
+  .menu .posledni {
+    border-right: none;
+  }
+
+  .perex{
+    margin: auto;
+    font-size: 14px;
+  }
+
+  .image {
+    display : flex;
+    position: relative;
+    margin  : 45px 0;
+  }
+
+  .image .popisek {
+    position: absolute;
+    color   : white;
+    bottom  : 3px;
+    right   : 0px;
+  }
+
+  .popisek a {
+    color: white;
+  }
+
+  .galerie {
+    display    : flex;
+    width      : 100%;
+    align-items: stretch;
+    flex-wrap  : wrap;
+    line-height: 0;
+
+  }
+
+  .galerie .popisek {
+    display: none;
+  }
+
+  .foto {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* PC */
+@media (min-width: 1000px) {
+  .header {
+    padding       : 20px 120px;
+    padding-bottom: 40px;
+  }
+
+  .titulek {
+    font-size: 60px;
+  }
+
+
+  .content {
+    transform  : translate(0, -40px);
+    background : white;
+    width      : 80%;
+    top        : 300px;
+    padding-top: 30px;
+    margin     : 0 auto;
+  }
+
+  .perex{
+    width: 70%;
+    margin: auto;
+    font-size: 18px;
+  }
+
+  .menu {
+    display   : block;
+    text-align: left;
+    float     : left;
+    padding   : 10px 50px;
+    margin-top: -15px;
+
+  }
+
+  .menu li {
+    border       : 0;
+    border-bottom: 0.5px solid rgb(206, 200, 200);
+  }
+
+  .uvod,
+  .co {
+    padding-left: 250px;
+  }
+
+  .proc {
+    padding-right: 200px;
+     }
+  p {
+      padding  : 0 30px;
+      font-size: 16px;
+    }
+
+  
+  .foto {
+    width: 33.333333%;
+  }
+.paticka{
+  background-color: none ;
+  margin: auto;
+}
+}
